@@ -31,3 +31,6 @@ doc/
 
 # Ignore Byebug command history file.
 .byebug_history
+
+# Ignore spring file
+/spring/#.pid
