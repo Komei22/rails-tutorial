@@ -18,6 +18,16 @@ class UsersController < ApplicationController
     end
   end
 
+  def update
+    @user = User.find(params[:id])
+    if @user.update_attributes(user_params)
+      # 更新に成功した場合
+
+    else
+      render 'edit'
+    end
+  end
+
   def edit
     @user = User.find(params[:id])
   end
