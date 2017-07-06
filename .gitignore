@@ -34,6 +34,3 @@ doc/
 
 # Ignore spring file
 /spring/#.pid
-
-# Ignore yardoc
-/.yardoc
