@@ -37,3 +37,6 @@ doc/
 
 # Ignore yardoc
 /.yardoc
+
+# Ignore post micropost
+/public/uploads/micropost
