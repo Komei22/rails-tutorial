@@ -39,4 +39,4 @@ doc/
 /.yardoc
 
 # Ignore post micropost
-/public/
+/public
