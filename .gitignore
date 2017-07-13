@@ -37,3 +37,5 @@ doc/
 
 # Ignore yardoc
 /.yardoc
+
+/public/uploads
