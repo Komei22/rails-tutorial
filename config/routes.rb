@@ -20,4 +20,9 @@ Rails.application.routes.draw do
   resources :password_resets, only: [:new, :create, :edit, :update]
   resources :microposts, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
+
+  # ユーザ情報API用のエンドポイントを定義
+  scope '/api', { format: 'json' } do
+    resources :users
+  end
 end
