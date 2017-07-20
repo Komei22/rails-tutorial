@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   resources :relationships, only: [:create, :destroy]
 
   # ユーザ情報API用のエンドポイントを定義
-  namespace :api, { format: 'json' } do
+  scope '/api', { format: 'json' } do
     resources :users
   end
 end
