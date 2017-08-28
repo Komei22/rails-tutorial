@@ -1,3 +1,11 @@
+proj_path = "#{File.expand_path("../..", __FILE__)}"
+proj_name = File.basename(proj_path)
+
+pidfile "#{proj_path}/tmp/pids/puma.pid"
+
+bind "unix:///home/rails_test/run/#{proj_name}.sock"
+directory proj_path
+
 workers Integer(ENV['WEB_CONCURRENCY'] || 2)
 threads_count = Integer(ENV['RAILS_MAX_THREADS'] || 5)
 threads threads_count, threads_count
