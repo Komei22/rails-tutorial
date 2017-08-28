@@ -3,7 +3,7 @@ proj_name = File.basename(proj_path)
 
 pidfile "#{proj_path}/tmp/pids/puma.pid"
 
-bind "unix:///home/rails_app/run/#{proj_name}.sock"
+bind "unix:///root/rails_app/run/#{proj_name}.sock"
 directory proj_path
 
 workers Integer(ENV['WEB_CONCURRENCY'] || 2)
