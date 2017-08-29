@@ -1,8 +1,6 @@
 proj_path = "#{File.expand_path("../..", __FILE__)}"
 proj_name = File.basename(proj_path)
 
-pidfile "#{proj_path}/tmp/pids/puma.pid"
-
 directory proj_path
 
 workers Integer(ENV['WEB_CONCURRENCY'] || 2)
