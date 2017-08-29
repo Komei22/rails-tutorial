@@ -3,7 +3,6 @@ proj_name = File.basename(proj_path)
 
 pidfile "#{proj_path}/tmp/pids/puma.pid"
 
-bind "unix:///var/run/puma.sock"
 directory proj_path
 
 workers Integer(ENV['WEB_CONCURRENCY'] || 2)
