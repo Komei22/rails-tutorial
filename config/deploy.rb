@@ -14,12 +14,12 @@ end
 
 task :stop do
   on roles(:web) do
-    execute "cd /var/www/sample_app/current/ && RACK_ENV=production bundle exec pumactl stop"
+    execute "cd /var/www/sample_app/current/ && bundle exec pumactl stop"
   end
 end
 
 task :restart do
   on roles(:web) do
-    execute "cd /var/www/sample_app/current/ && RACK_ENV=production bundle exec pumactl restart"
+    execute "cd /var/www/sample_app/current/ && bundle exec pumactl restart"
   end
 end
