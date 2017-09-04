@@ -6,7 +6,8 @@ set :repo_url, "https://github.com/Komei22/sample_app.git"
 set :branch, "master"
 set :rails_env, 'production'
 
-task :deploy do
+task :start do
   on roles(:web) do
+    execute "cd /var/www/sample_app/current/ && RACK_ENV=production bundle exec puma"
   end
 end
