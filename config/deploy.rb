@@ -6,7 +6,20 @@ set :repo_url, "https://github.com/Komei22/sample_app.git"
 set :branch, "master"
 set :rails_env, 'production'
 
-task :deploy do
+task :start do
   on roles(:web) do
+    execute "sudo systemctl start puma"
+  end
+end
+
+task :stop do
+  on roles(:web) do
+    execute "sudo systemctl stop puma"
+  end
+end
+
+task :restart do
+  on roles(:web) do
+    execute "sudo systemctl restart puma"
   end
 end
