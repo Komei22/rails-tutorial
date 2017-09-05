@@ -8,13 +8,13 @@ set :rails_env, 'production'
 
 task :start do
   on roles(:web) do
-    execute "cd /var/www/sample_app/current/ && RACK_ENV=production bundle exec puma"
+    execute "systemctl start puma"
   end
 end
 
 task :stop do
   on roles(:web) do
-    execute "cd /var/www/sample_app/current/ && bundle exec pumactl stop"
+    execute "systemctl stop puma"
   end
 end
 
