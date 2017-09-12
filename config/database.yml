@@ -19,5 +19,7 @@ test:
 
 production:
   <<: *default
+  host: db
   database: rails_production
-  url: mysql2://<%= ENV["DB_USER_NAME"] %>:<%= ENV["DB_PASS"] %>@db:3306
+  username: <%= ENV["DB_USER_NAME"] %>
+  password: <%= ENV["DB_PASS"] %>
