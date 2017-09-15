@@ -16,7 +16,7 @@ test:
 
 production:
   <<: *default
-  host: db
+  host: <%= ENV["DB_HOST"] %>
   database: rails_production
   username: <%= ENV["DB_USER_NAME"] %>
   password: <%= ENV["DB_PASS"] %>
