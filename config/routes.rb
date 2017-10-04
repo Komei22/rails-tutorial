@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   scope '/api', { format: 'json' } do
     resources :users do
       member do
-        get :user_info, to: 'users#user_info'
+        get :profile, to: 'users#user_info'
       end
     end
   end
