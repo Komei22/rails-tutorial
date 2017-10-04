@@ -23,7 +23,10 @@ Rails.application.routes.draw do
 
   # ユーザ情報API用のエンドポイントを定義
   scope '/api', { format: 'json' } do
-    get '/users/:id', to: 'users#show'
-    get '/users/:id/user_info', to: 'users#user_info'
+    resources :users do
+      member do
+        get :user_info, to: 'users#user_info'
+      end
+    end
   end
 end
