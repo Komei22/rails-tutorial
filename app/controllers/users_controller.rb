@@ -20,6 +20,10 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def user_microposts
+
+  end
+
   def new
     @user = User.new
   end
