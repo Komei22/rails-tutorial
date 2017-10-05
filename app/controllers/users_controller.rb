@@ -21,7 +21,8 @@ class UsersController < ApplicationController
   end
 
   def user_microposts
-
+    user = User.find(params[:id])
+    @microposts = @user.microposts
   end
 
   def new
