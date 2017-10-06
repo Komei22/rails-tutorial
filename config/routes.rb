@@ -26,6 +26,7 @@ Rails.application.routes.draw do
     resources :users do
       member do
         get :profile, to: 'users#user_info'
+        get :microposts, to: 'users#user_microposts'
       end
     end
   end
