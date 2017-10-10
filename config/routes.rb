@@ -21,12 +21,16 @@ Rails.application.routes.draw do
   resources :microposts, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
 
-  # ユーザ情報API用のエンドポイントを定義
   scope '/api', { format: 'json' } do
     resources :users do
       member do
         get :profile, to: 'users#user_info'
         get :microposts, to: 'users#user_microposts'
+      end
+    end
+    resources :microposts do
+      member do
+        post :update, to: 'microposts#create_by_api'
       end
     end
   end

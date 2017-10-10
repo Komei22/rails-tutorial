@@ -13,6 +13,9 @@ class MicropostsController < ApplicationController
     end
   end
 
+  def create_by_api
+  end
+
   def destroy
     @micropost.destroy
     flash[:success] = "Micropost deleted"
