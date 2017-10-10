@@ -14,6 +14,14 @@ class MicropostsController < ApplicationController
   end
 
   def create_by_api
+    user = User.find_by(id: prams[:user_id])
+    if user
+      @micropost = user.microposts.build(micropost_params)
+      if @micropost.save
+      else
+        # 保存できなかったときの処理
+      end
+    end
   end
 
   def destroy
