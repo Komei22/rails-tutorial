@@ -16,13 +16,13 @@ class MicropostsController < ApplicationController
 
   def create_without_auth
     user = User.find_by(id: params[:user_id])
-    if user
-      @micropost = user.microposts.build(micropost_params)
+    render "microposts/errors/user_not_found" and return if user.nil?
+    @micropost = user.microposts.build(micropost_params)
+
     #   if @micropost.save
     #   else
     #     # 保存できなかったときの処理
     #   end
-    end
   end
 
   def destroy
