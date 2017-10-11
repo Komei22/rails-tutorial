@@ -38,3 +38,33 @@ $ rails server
 ```
 
 詳しくは、[*Ruby on Rails チュートリアル*](http://railstutorial.jp/)を参考にしてください。
+
+## アプリケーションのデプロイ方法
+
+### 環境準備
+
+本番環境にデプロイする際の設定ファイルは`config/deploy/production.rb`にあります。
+
+```
+server "deploy.example.com", user: "deploy", roles: %w{web}
+```
+
+- server:デプロイ先のサーバのホスト名
+- user:実行ユーザ
+- roles:サーバの役割
+
+`~/.ssh/config`内の以下の設定を記述して名前解決できるように対応して下さい。
+
+```
+Host deploy.exmaple.com
+  HostName 192.168.0.1
+  User deploy
+```
+
+### デプロイ実行
+
+以下のコマンドを実行して下さい。
+
+```
+$ bundle exec cap production deploy
+```
