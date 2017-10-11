@@ -30,6 +30,5 @@ Rails.application.routes.draw do
     end
 
     post 'microposts/create', to: 'microposts#create_without_auth'
-
   end
 end
