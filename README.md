@@ -46,7 +46,7 @@ $ rails server
 本番環境にデプロイする際の設定ファイルは`config/deploy/production.rb`にあります。
 
 ```
-$ server "deploy.example.com", user: "deploy", roles: %w{web}
+server "deploy.example.com", user: "deploy", roles: %w{web}
 ```
 
 - server:デプロイ先のサーバのホスト名
