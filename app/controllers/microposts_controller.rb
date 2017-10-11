@@ -18,11 +18,7 @@ class MicropostsController < ApplicationController
     user = User.find_by(id: params[:user_id])
     render "microposts/errors/user_not_found" and return if user.nil?
     @micropost = user.microposts.build(micropost_params)
-
-    #   if @micropost.save
-    #   else
-    #     # 保存できなかったときの処理
-    #   end
+    render "microposts/errors/could_not_saved" and return unless @micropost.save
   end
 
   def destroy
