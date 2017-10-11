@@ -28,10 +28,8 @@ Rails.application.routes.draw do
         get :microposts, to: 'users#user_microposts'
       end
     end
-    resources :microposts do
-      member do
-        post :update, to: 'microposts#create_by_api'
-      end
-    end
+
+    post 'microposts/create', to: 'microposts#create_without_auth'
+
   end
 end

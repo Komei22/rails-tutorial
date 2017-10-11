@@ -1,6 +1,7 @@
 class MicropostsController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy]
   before_action :correct_user, only: :destroy
+  protect_from_forgery except: [:create_without_auth]
 
   def create
     @micropost = current_user.microposts.build(micropost_params)
@@ -13,14 +14,14 @@ class MicropostsController < ApplicationController
     end
   end
 
-  def create_by_api
-    user = User.find_by(id: prams[:user_id])
+  def create_without_auth
+    user = User.find_by(id: params[:user_id])
     if user
       @micropost = user.microposts.build(micropost_params)
-      if @micropost.save
-      else
-        # 保存できなかったときの処理
-      end
+    #   if @micropost.save
+    #   else
+    #     # 保存できなかったときの処理
+    #   end
     end
   end
 
