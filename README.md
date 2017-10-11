@@ -37,4 +37,12 @@ $ rails test
 $ rails server
 ```
 
+## アプリケーションのデプロイ
+
+Nyah上の本番環境にデプロイしたい場合は以下のコマンドを実行して下さい。
+
+```
+cap production deploy
+```
+
 詳しくは、[*Ruby on Rails チュートリアル*](http://railstutorial.jp/)を参考にしてください。
