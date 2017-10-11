@@ -41,12 +41,9 @@ $ rails server
 
 ## アプリケーションのデプロイ
 
-
 ### 環境設定
 
 本番環境にデプロイする際の設定ファイルは`config/deploy/production.rb`にあり、現状は以下のようなっています。
-
-
 
 ```
 $ server "deploy.example.com", user: "deploy", roles: %w{web}
