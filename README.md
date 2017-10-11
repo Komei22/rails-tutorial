@@ -39,11 +39,11 @@ $ rails server
 
 詳しくは、[*Ruby on Rails チュートリアル*](http://railstutorial.jp/)を参考にしてください。
 
-## アプリケーションのデプロイ
+## アプリケーションのデプロイ方法
 
-### 環境設定
+### 環境準備
 
-本番環境にデプロイする際の設定ファイルは`config/deploy/production.rb`にあり、現状は以下のようなっています。
+本番環境にデプロイする際の設定ファイルは`config/deploy/production.rb`にあります。
 
 ```
 $ server "deploy.example.com", user: "deploy", roles: %w{web}
@@ -53,15 +53,13 @@ $ server "deploy.example.com", user: "deploy", roles: %w{web}
 - user:実行ユーザ
 - roles:サーバの役割
 
-Capistranoを使って`deploy.example.com`を指定してデプロイする場合は`~/.ssh/config`内の以下の設定を記述して名前解決できるように対応して下さい。
+`~/.ssh/config`内の以下の設定を記述して名前解決できるように対応して下さい。
 
 ```
-Host deploy.exmaple.xyz
+Host deploy.exmaple.com
   HostName 192.168.0.1
   User deploy
 ```
-
-したがって、デプロイ先を変更する場合は`production.rb`を適宜環境に合わせて編集するようにして下さい。
 
 ### デプロイ実行
 
