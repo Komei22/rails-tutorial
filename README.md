@@ -47,13 +47,23 @@ $ rails server
 本番環境にデプロイする際の設定ファイルは`config/deploy/production.rb`にあり、現状は以下のようなっています。
 
 
+
 ```
-server "deploy.app.piyorin.xyz", user: "deploy", roles: %w{web}
+$ server "deploy.example.com", user: "deploy", roles: %w{web}
 ```
 
-- server:デプロイ先のサーバ名
+- server:デプロイ先のサーバのホスト名
 - user:実行ユーザ
 - roles:サーバの役割
+
+Capistranoはssh接続を使ってデプロイ先のサーバに接続して、デプロイを実行します。
+したがって、ここで仮に`deploy.example.com`を指定してデプロイする場合は`~/.ssh/config`内の以下の設定を記述して名前解決できるように対応して下さい。
+
+```
+Host exmaple.xyz
+  HostName 192.168.0.1
+  User deploy
+```
 
 したがって、デプロイ先を変更する場合は`production.rb`を適宜環境に合わせて編集するようにして下さい。
 
@@ -62,6 +72,5 @@ server "deploy.app.piyorin.xyz", user: "deploy", roles: %w{web}
 以下のコマンドを実行して下さい。
 
 ```
-bundle exec
-cap production deploy
+$ bundle exec cap production deploy
 ```
