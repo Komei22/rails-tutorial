@@ -37,12 +37,31 @@ $ rails test
 $ rails server
 ```
 
+詳しくは、[*Ruby on Rails チュートリアル*](http://railstutorial.jp/)を参考にしてください。
+
 ## アプリケーションのデプロイ
 
-Nyah上の本番環境にデプロイしたい場合は以下のコマンドを実行して下さい。
+
+### 環境設定
+
+本番環境にデプロイする際の設定ファイルは`config/deploy/production.rb`にあり、現状は以下のようなっています。
+
 
 ```
+server "deploy.app.piyorin.xyz", user: "deploy", roles: %w{web}
+```
+
+- server:デプロイ先のサーバ名
+- user:実行ユーザ
+- roles:サーバの役割
+
+したがって、デプロイ先を変更する場合は`production.rb`を適宜環境に合わせて編集するようにして下さい。
+
+### デプロイ実行
+
+以下のコマンドを実行して下さい。
+
+```
+bundle exec
 cap production deploy
 ```
-
-詳しくは、[*Ruby on Rails チュートリアル*](http://railstutorial.jp/)を参考にしてください。
