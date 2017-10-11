@@ -56,11 +56,10 @@ $ server "deploy.example.com", user: "deploy", roles: %w{web}
 - user:実行ユーザ
 - roles:サーバの役割
 
-Capistranoはssh接続を使ってデプロイ先のサーバに接続して、デプロイを実行します。
-したがって、ここで仮に`deploy.example.com`を指定してデプロイする場合は`~/.ssh/config`内の以下の設定を記述して名前解決できるように対応して下さい。
+Capistranoを使って`deploy.example.com`を指定してデプロイする場合は`~/.ssh/config`内の以下の設定を記述して名前解決できるように対応して下さい。
 
 ```
-Host exmaple.xyz
+Host deploy.exmaple.xyz
   HostName 192.168.0.1
   User deploy
 ```
