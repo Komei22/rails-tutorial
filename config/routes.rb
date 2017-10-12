@@ -21,7 +21,6 @@ Rails.application.routes.draw do
   resources :microposts, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
 
-  # ユーザ情報API用のエンドポイントを定義
   scope '/api', { format: 'json' } do
     resources :users do
       member do
@@ -29,5 +28,7 @@ Rails.application.routes.draw do
         get :microposts, to: 'users#user_microposts'
       end
     end
+
+    post 'microposts/create', to: 'microposts#create_without_auth'
   end
 end

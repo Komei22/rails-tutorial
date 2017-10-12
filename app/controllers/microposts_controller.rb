@@ -1,6 +1,7 @@
 class MicropostsController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy]
   before_action :correct_user, only: :destroy
+  protect_from_forgery except: [:create_without_auth]
 
   def create
     @micropost = current_user.microposts.build(micropost_params)
@@ -11,6 +12,13 @@ class MicropostsController < ApplicationController
       @feed_items = []
       render 'static_pages/home'
     end
+  end
+
+  def create_without_auth
+    user = User.find_by(id: params[:user_id])
+    render "microposts/errors/user_not_found" and return if user.nil?
+    @micropost = user.microposts.build(micropost_params)
+    render "microposts/errors/could_not_saved" and return unless @micropost.save
   end
 
   def destroy
