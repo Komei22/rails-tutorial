@@ -1,6 +1,6 @@
 # Ruby on Rails チュートリアルのサンプルアプリケーション
 
-これは、次の教材で作られたサンプルアプリケーションです。   
+これは、次の教材で作られたサンプルアプリケーションです。
 [*Ruby on Rails チュートリアル: 実例を使って Rails を学ぼう*](http://railstutorial.jp/)
 [Michael Hartl](http://www.michaelhartl.com/) 著
 
@@ -67,4 +67,17 @@ Host deploy.exmaple.com
 
 ```
 $ bundle exec cap production deploy
+```
+
+### Pumaの起動、再起動、停止
+
+以下のコマンドを適宜実行してください。
+
+```
+# 起動
+$ bundle exec cap production start
+# 停止
+$ bundle exec cap production stop
+# 再起動
+$ bundle exec cap production restart
 ```
