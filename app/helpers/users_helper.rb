@@ -1,7 +1,7 @@
 module UsersHelper
   # 引数で与えられたユーザのGravatarを返す
   def gravatar_for(user, size: 80)
-    image_tag(gravatar_url(user), alt: user.name, class: "gravatar")
+    image_tag(gravatar_url(user, size: size), alt: user.name, class: "gravatar")
   end
 
   def gravatar_url(user, size: 80)
