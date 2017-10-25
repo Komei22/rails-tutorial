@@ -21,7 +21,7 @@ class MicropostsCreateTest < ActionDispatch::IntegrationTest
   end
 
   test "show error json when micropost could not saved" do
-    content = "hoge" * 50
+    content = "a" * 301
     assert_no_difference 'Micropost.count' do
       post microposts_create_path, params: { user_id: @user.id, micropost: { content: content} }
     end
