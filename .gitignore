@@ -39,3 +39,4 @@ doc/
 /.yardoc
 
 /public/uploads
+coverage
