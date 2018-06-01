@@ -39,4 +39,5 @@ doc/
 /.yardoc
 
 /public/uploads
-coverage
+coverage/
+.ruby-version
