@@ -3,19 +3,19 @@ default: &default
   encoding: utf8
   pool: 5
   host: 127.0.0.1
-  port: 6033
+  port: 3306
 
 
 development:
   <<: *default
   username: root
-  password: root
+  password: ""
   database: rails_development
 
 test:
   <<: *default
   username: root
-  password: root
+  password: ""
   database: rails_test
 
 production:
